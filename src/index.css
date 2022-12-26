@@ -21,7 +21,7 @@
 }
 
 .board {
-  background-image: url("images/gwint_bg.jpg");
+  background-image: url("/images/gwint_bg.jpg");
   margin: 0;
   padding: 20px 0;
   min-height: 100vh;
