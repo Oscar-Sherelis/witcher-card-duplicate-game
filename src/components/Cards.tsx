@@ -55,10 +55,26 @@ const Card: React.FC = () => {
           updatedCards[firstCardIndexState].openedCard = false;
           updatedCards[secondCardIndex].openedCard = false;
           setCards(updatedCards);
-        }, 2000);
+        }, 1000);
       } else if (firstCardImageState === image) {
         updatedCards[firstCardIndexState].openedCard = true;
         updatedCards[secondCardIndex].openedCard = true;
+
+        setTimeout(() => {
+          const finished = updatedCards.every((obj) => obj.openedCard);
+
+          if (finished) {
+            alert("Victory");
+            const shuffleCards = () => {
+              let shuffled = cards.sort(() => Math.random() - 0.5);
+              shuffled.forEach((obj) => {
+                obj.openedCard = false;
+              });
+              setCards(shuffled);
+            };
+            shuffleCards();
+          }
+        }, 500);
       }
 
       setcounter(0);
