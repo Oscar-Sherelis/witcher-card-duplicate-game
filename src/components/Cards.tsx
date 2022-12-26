@@ -6,11 +6,9 @@ const Card: React.FC = () => {
 
   let updatedCards: Array<card> = [];
   const [counterState, setcounter] = useState(0);
-
+  // after first click saves object index and image url
   const [firstCardImageState, setfirstCardImageState] = useState("");
-
   const [firstCardIndexState, setfirstCardIndex] = useState(0);
-
   const ClosedCardImage: string = "images/closed_card.jpeg";
 
   useEffect(() => {
@@ -23,6 +21,7 @@ const Card: React.FC = () => {
   }, []);
 
   const flipCard = (objIndex: number, image: string) => {
+    // used let counter to save and keep value, because after rerender will reset
     let counter = counterState;
 
     if (counter === 0) {

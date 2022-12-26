@@ -56,7 +56,6 @@
   cursor: pointer;
 }
 
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -88,6 +87,37 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 950px) {
+  .cards {
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px 0;
+    gap: 20px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    min-width: 200px;
+    min-height: 250px;
+    max-height: auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-gap: 10px;
+    gap: 10px;
+  }
+
+  .card {
+    min-width: 100px;
+    min-height: 150px;
+  }
 }
 
 @media (prefers-color-scheme: light) {
